@@ -9,6 +9,7 @@ import (
 // A Writer is a connection to a syslog server.
 type Writer struct {
 	priority  Priority
+	appname   string
 	tag       string
 	hostname  string
 	network   string
@@ -77,6 +78,11 @@ func (w *Writer) SetFramer(f Framer) {
 // SetHostname changes the hostname for syslog messages if needed.
 func (w *Writer) SetHostname(hostname string) {
 	w.hostname = hostname
+}
+
+// SetAppname changes the appname for RFC5424syslog messages if needed.
+func (w *Writer) SetAppname(appname string) {
+	w.appname = appname
 }
 
 // Write sends a log message to the syslog daemon using the default priority
