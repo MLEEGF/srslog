@@ -82,7 +82,7 @@ func (w *Writer) SetHostname(hostname string) {
 
 // SetAppname changes the appname for RFC5424syslog messages if needed.
 func (w *Writer) SetAppname(appname string) {
-	w.appname = appname
+	Appname = appname
 }
 
 // Write sends a log message to the syslog daemon using the default priority
